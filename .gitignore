@@ -9,6 +9,9 @@ data/baseline.json
 data/events.jsonl
 data/latest_scan.json
 
+# Generated report QA renders.
+docs/report_render/
+
 # Local Arduino secrets.
 firmware/wifighost_esp32/secrets.h
 
