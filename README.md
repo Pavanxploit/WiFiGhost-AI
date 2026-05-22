@@ -33,6 +33,16 @@ python scripts\train_model.py
 python backend\app.py
 ```
 
+If Windows says `python` is not found, install Python 3.12 or use the Python runtime bundled with Codex:
+
+```powershell
+& "C:\Users\jeeva\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python scripts\train_model.py
+python backend\app.py
+```
+
 Open:
 
 ```text
