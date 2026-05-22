@@ -1,0 +1,34 @@
+{
+  "known_bssids": {
+    "A4:2B:B0:11:22:33": {
+      "ssid": "Campus-Lab",
+      "channel": 6,
+      "encryption": "WPA2",
+      "last_rssi": -49
+    },
+    "B8:27:EB:44:55:66": {
+      "ssid": "Library-WiFi",
+      "channel": 11,
+      "encryption": "WPA2",
+      "last_rssi": -62
+    },
+    "C0:FF:EE:77:88:99": {
+      "ssid": "Project-Room",
+      "channel": 1,
+      "encryption": "WPA2",
+      "last_rssi": -56
+    }
+  },
+  "ssid_to_bssids": {
+    "Campus-Lab": [
+      "A4:2B:B0:11:22:33"
+    ],
+    "Library-WiFi": [
+      "B8:27:EB:44:55:66"
+    ],
+    "Project-Room": [
+      "C0:FF:EE:77:88:99"
+    ]
+  },
+  "updated_at": "demo-seed"
+}

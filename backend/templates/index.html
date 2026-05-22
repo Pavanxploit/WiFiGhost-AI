@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WiFiGhost AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">ESP32 wireless security monitor</p>
+          <h1>WiFiGhost AI</h1>
+        </div>
+        <div class="server-pill" id="modelStatus">Model: loading</div>
+      </section>
+
+      <section class="grid">
+        <article class="panel status-panel" id="statusPanel">
+          <div class="panel-head">
+            <span>Status</span>
+            <strong id="statusText">READY</strong>
+          </div>
+          <div class="risk-wrap">
+            <div class="risk-ring">
+              <span id="riskScore">0</span>
+              <small>risk</small>
+            </div>
+            <div class="risk-copy">
+              <h2 id="threatText">Waiting for scan</h2>
+              <p id="topReason">Start the demo baseline or send a scan from ESP32.</p>
+            </div>
+          </div>
+          <div class="button-row">
+            <button id="seedBtn" type="button">Seed baseline</button>
+            <button id="normalBtn" type="button">Normal scan</button>
+            <button id="attackBtn" type="button" class="danger">Rogue AP demo</button>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <span>Environment</span>
+            <strong id="deviceId">No device</strong>
+          </div>
+          <div class="metric-grid">
+            <div>
+              <small>Access points</small>
+              <b id="apCount">0</b>
+            </div>
+            <div>
+              <small>Unknown BSSID</small>
+              <b id="unknownCount">0</b>
+            </div>
+            <div>
+              <small>Duplicate SSID</small>
+              <b id="duplicateCount">0</b>
+            </div>
+            <div>
+              <small>Open networks</small>
+              <b id="openCount">0</b>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="grid lower">
+        <article class="panel">
+          <div class="panel-head">
+            <span>Reasons</span>
+            <strong id="baselineCount">0 baseline APs</strong>
+          </div>
+          <ul class="reasons" id="reasonsList"></ul>
+        </article>
+
+        <article class="panel table-panel">
+          <div class="panel-head">
+            <span>Latest scan</span>
+            <strong id="scanTime">-</strong>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>SSID</th>
+                  <th>BSSID</th>
+                  <th>RSSI</th>
+                  <th>CH</th>
+                  <th>Security</th>
+                </tr>
+              </thead>
+              <tbody id="networkRows"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

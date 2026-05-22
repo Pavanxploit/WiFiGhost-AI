@@ -1,0 +1,1 @@
+"""WiFiGhost AI backend package."""
