@@ -15,6 +15,7 @@ const els = {
   scanTime: document.querySelector("#scanTime"),
   networkRows: document.querySelector("#networkRows"),
   seedBtn: document.querySelector("#seedBtn"),
+  learnBtn: document.querySelector("#learnBtn"),
   normalBtn: document.querySelector("#normalBtn"),
   attackBtn: document.querySelector("#attackBtn"),
 };
@@ -112,6 +113,11 @@ async function refresh() {
 
 els.seedBtn.addEventListener("click", async () => {
   await postJson("/api/demo/seed");
+  await refresh();
+});
+
+els.learnBtn.addEventListener("click", async () => {
+  await postJson("/api/baseline/learn");
   await refresh();
 });
 
